@@ -1,4 +1,4 @@
-f = open('/Users/elizavetakulesova/Downloads/26_6056.txt')
+f = open('26_7014.txt')
 n = f.readline()
 s = []
 for line in f:
