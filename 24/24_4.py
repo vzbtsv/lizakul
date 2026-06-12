@@ -6,11 +6,11 @@ def r1(s):
     res = []
 
     for a in alp:
-        res.append(s.rindex(a) - s.index(a) + 1)
+        res.append(s.rindex(a) - s.index(a))
 
-    return res
+    return max(res)
 
-
+all_res = []
 for st in f:
     if st.count("A") < 25:
-        r1(st)
+        print(r1(st))

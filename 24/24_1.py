@@ -9,7 +9,8 @@ for i in range(len(f) - 1):
     for j in range(1, 23):
         st = "RO".join(f[i:i + j])
         if "ORO" not in st and "ROR" not in st:
-            maxx = max(maxx, st, key=len)
+            if st.count("RO") == 21:
+                maxx = max(maxx, st, key=len)
 
 
 
