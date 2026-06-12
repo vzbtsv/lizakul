@@ -27,6 +27,7 @@ def p1(r):
 
     for i in range(len(r) - 1):
         if flag:
+            flag = False
             continue
         x1 = r[i]
         x2 = r[i + 1]
@@ -37,7 +38,10 @@ def p1(r):
                 # k -= 1
                 flag = True
 
-    return k + 1
+    if flag:
+        return k
+    else:
+        return k + 1
 
 
 res = []
