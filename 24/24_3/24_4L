@@ -1,0 +1,13 @@
+from re import *
+
+f = open('/Users/elizavetakulesova/Downloads/24_7853.txt').read()
+st = ''
+alf = 'QWERYUIPASDFGHJKLZXCVBMNOT'
+for i in range(1, len(f) - 1):
+    if f[i - 1] in 'NOT' and f[i] in alf and f[i + 1] in 'NOT':
+        st += ' '
+    else:
+        st += f[i]
+ans = st.split()
+
+print(max(len(x) for x in ans))
