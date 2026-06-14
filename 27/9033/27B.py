@@ -57,13 +57,13 @@ print(res)
 
 res = []
 for cluster in clusters:
-    c = center(cluster)
     bright_pat = r".[89]"
     bright_stars = list(filter(lambda x: re.match(bright_pat, x[1]), cluster))
 
-    for q in bright_stars:
-        if r(q, c):
-            res.append(r(q, c))
+    for b1 in bright_stars:
+        for b2 in bright_stars:
+            if r(b1, b2):
+                res.append(r(b1, b2))
 
 B2 = sum(res) / len(res)
 print(B2)
