@@ -12,7 +12,7 @@ for i in range(len(f)):
                                                                                                                                       i:j + 1] and 'BC' not in f[
                                                                                                                                                                i:j + 1] and 'CC' not in f[
                                                                                                                                                                                         i:j + 1] and 'CA' not in f[
-                                                                                                                                                                                                                 i:j + 1] and 'CA' not in f[i:j + 1]):
+                                                                                                                                                                                                                 i:j + 1] and 'CB' not in f[i:j + 1]):
                 cnt += 1
             else:
                 break
