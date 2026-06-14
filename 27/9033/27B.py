@@ -44,9 +44,9 @@ res = []
 for cluster1 in clusters:
     for cluster2 in clusters:
         if cluster1 != cluster2:
-            bright_pat = r".[89]."
-            bright_stars_1 = list(filter(lambda x: re.fullmatch(bright_pat, x[1]), cluster1))
-            bright_stars_2 = list(filter(lambda x: re.fullmatch(bright_pat, x[1]), cluster2))
+            bright_pat = r".[89]"
+            bright_stars_1 = list(filter(lambda x: re.match(bright_pat, x[1]), cluster1))
+            bright_stars_2 = list(filter(lambda x: re.match(bright_pat, x[1]), cluster2))
             for b1 in bright_stars_1:
                 for b2 in bright_stars_2:
                     res.append(r(b1, b2))
@@ -58,8 +58,8 @@ print(res)
 res = []
 for cluster in clusters:
     c = center(cluster)
-    bright_pat = r".[89]."
-    bright_stars = list(filter(lambda x: re.fullmatch(bright_pat, x[1]), cluster))
+    bright_pat = r".[89]"
+    bright_stars = list(filter(lambda x: re.match(bright_pat, x[1]), cluster))
 
     for q in bright_stars:
         if r(q, c):
