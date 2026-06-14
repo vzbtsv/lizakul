@@ -1,38 +1,24 @@
 from fnmatch import *
-
-
-
-def divs(n):
-    res = set()
-
-    for i in range(2, int(n ** 0.5) + 1):
+def f(n):
+    dct = dict()
+    i = 2
+    while n > 1:
         if n % i == 0:
-            res.add(i)
-            res.add(n // i)
+            n //= i
+            if i in dct:
+                dct[i] += 1
+            else:
+                dct[i] = 1
+        else:
+            i += 1
+    ans = 1
+    for el in dct:
+        ans *= (dct[el] + 1)
+    return [ans, len(dct)]
 
-
-    res = sorted(list(res))
-    if res:
-        simples = list(filter(lambda x: simple(x), res))
-
-    if len(res) == 32:
-        return simples
-
-    return False
-
-
-
-def simple(d):
-    for i in range(2, int(d ** 0.5) + 1):
-        if d % i == 0:
-            return False
-
-    return True
-
-
-
-for i in range(10 ** 6, 0, -1):
-    if fnmatch(str(i), "5*"):
-        r = divs(i)
-        if r:
-            print(i, len(r))
+# print(f(14))
+for i in range(1, 10 ** 6):
+    if fnmatch(str(i), '23*4?5'):
+        k = f(i)
+        if k[0] == 32:
+            print(i, k[1])
