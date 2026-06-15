@@ -1,7 +1,7 @@
 import re
 from math import hypot
 
-f = open("27A.xt").readlines()
+f = open("27A.txt").readlines()
 clusters = [[], []]
 
 def find_cluster(x, y):
